@@ -1,9 +1,13 @@
-// estas funciones son de ejemplo
 
-export const example = () => {
-  return 'example';
+export const test =() => {
+return 'imprimir pokemon'
+}
+
+
+export const datajson = () => {
+return "datajson"
 };
 
 export const anotherExample = () => {
-  return 'OMG';
+return 'OMG';
 };
