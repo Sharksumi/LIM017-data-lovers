@@ -1,21 +1,42 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header>Pokedex</header>
-    <section id="region"class="region">
-      <button id="kanto">
-        <img src="Kanto.png.5b771f50449542f0d26ef1ae4caa4429.png">
-      </button>
-      <button id="johto"><img src="images.png"></button>
-    </section>
-    <button id="btnMain" class="btnMain">Ver</button>
-   <!-- <div id="root"></div> -->
-    <script src="main.js" type="module"></script>
-    <footer>NEON</footer>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <title>Data Lovers</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>Pokedex</header>
+  <section id="region" class="region">
+    <!-- <button id="kanto"> -->
+    <!-- <img src="Kanto.png.5b771f50449542f0d26ef1ae4caa4429.png"> -->
+    <!-- </button> -->
+    <!-- <button id="johto"><img src="images.png"></button> -->
+  </section>
+
+  <button id="btnMain" class="btnMain">Ver</button>
+  <!-- para crear la tabla -->
+  <section class="chart">
+    <table id="table">
+      <thead>
+        <tr>
+          <th>Nº</th>
+          <th>Nombre</th>
+          <th>Imagen</th>
+          <th>Generación</th>
+          <th>Región</th>
+          <th>Ver más</th>
+        </tr>
+      </thead>
+      <tbody id="showData">
+      </tbody>
+    </table>
+  </section>
+  <!-- <div id="root"></div> -->
+  <script src="main.js" type="module"></script>
+  <footer>NEON</footer>
+</body>
+
 </html>
