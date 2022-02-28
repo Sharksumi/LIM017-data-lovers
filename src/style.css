@@ -38,10 +38,7 @@ thead{
 tr:hover td{
     background-color: rgb(255, 251, 251);
     color: black ;
-
-=======
+    }
 header{
     position: center;
-    
->>>>>>> 89c63c08070ba16962f52f5d7f39a7f4079c5444
-}
+  >>>>>>> 89c63c08070ba16962f52f5d7f39a7f4079c5444
