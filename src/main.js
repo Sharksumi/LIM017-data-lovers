@@ -13,7 +13,7 @@ showData.innerHTML += `
   <td>${characteristics.num}</td>  
   <td>${characteristics.name}</td>  
   <td><img src="${characteristics.img}"></td>  
-  <td>${characteristics.generation.num}</td>  
+  <td>${characteristics.generation.num.toUpperCase()}</td>  
   <td>${characteristics.generation.name}</td>  
 </tr>
 `
@@ -21,7 +21,19 @@ showData.innerHTML += `
 
 const btnjson = document.querySelector("#btnMain")
 btnjson.addEventListener("click", () => {
-    console.log("dentro de la funcion")
+    //console.log("dentro de la funcion")
 })
 
 //console.log(example);
+document.getElementById("bienvenida").classList.remove("hide")
+// Funcion para ocultar la tabla de pokemon en la bienvenida
+let btnVer =  document.getElementById("btnMain");
+btnVer.addEventListener("click", verTabla);
+
+function verTabla(){
+
+  document.getElementById("chart1").classList.remove("hide");
+  document.getElementById("bienvenida").classList.add("hide");
+
+
+}

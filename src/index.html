@@ -6,11 +6,12 @@
   <title>Data Lovers</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<div class="bienvenida">
+
 <body>
   <header><img src="/imagenes/pokedex-3d-logo-chico.png"></header>
-  <section id="region" class="region">
+  <div class="bienvenida hide" id="bienvenida">
     <h1>Bienvenido a la pokedex</h1>
+  <section id="region" class="region">
     <h3>Elige una región</h3>
     <button id="kanto">
     <img src="/imagenes/kanto-logo-boton.png">
@@ -21,7 +22,7 @@
   <button id="btnMain" class="btnMain">Ver toda la Pokedex</button>
 </div>
   <!-- para crear la tabla -->
-  <section class="chart">
+  <section class="chart hide" id="chart1">
     <table id="table">
       <thead>
         <tr>

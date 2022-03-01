@@ -1,4 +1,44 @@
+*{
+    font-family: "Helvetica Neue";
+}
+body{
+    background-image: url(/imagenes/background.png)
+}
 header{
-    position: center;
-    
+    align-items: center;
+    position: relative;
+    margin-left: 25%;
+}
+.bienvenida{
+    text-align: center;
+    ;
+}
+#kanto{
+    margin-right: 50px;
+    border-color: lightslategray;
+
+}
+#kanto:hover{
+    opacity: 0.5;
+}
+#johto{
+    margin-left: 50px;
+}
+
+#johto:hover{
+    opacity: 0.5;
+}
+
+#btnMain{
+    margin-top: 50px;
+}
+.chart{
+    text-align:center;
+}
+.hide{
+    display: none;
+}
+footer{
+    text-align: center;
+    margin-top: 10%;
 }
