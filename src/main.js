@@ -10,11 +10,11 @@ for (let characteristics of newArray) {
 //console.log(characteristics.num);
 showData.innerHTML += `
 <tr>
-  <td>${characteristics.num}</td>  
-  <td>${characteristics.name}</td>  
-  <td><img src="${characteristics.img}"></td>  
-  <td>${characteristics.generation.num.toUpperCase()}</td>  
-  <td>${characteristics.generation.name}</td>  
+  <td>${characteristics.num}</td>
+  <td>${characteristics.name.charAt(0).toUpperCase() + characteristics.name.slice(1)}</td>  
+  <td><img src="${characteristics.img}"></td>
+  <td>${characteristics.generation.num.toUpperCase()}</td>
+  <td>${characteristics.generation.name.charAt(0).toUpperCase() + characteristics.generation.name.slice(1)}</td>
 </tr>
 `
 }
