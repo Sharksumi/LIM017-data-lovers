@@ -1,4 +1,4 @@
-//import { datajson } from './data.js';
+import { filtergeneration } from './data.js';
 
 import pokemons from './data/pokemon/pokemon.js'; //importamos los datos del array 
 const newArray = pokemons.pokemon; // guardamos esos datos en un nuevo array, lo extendi a pokemon para ingresar al array
@@ -23,6 +23,9 @@ const btnjson = document.querySelector("#btnMain")
 btnjson.addEventListener("click", () => {
     //console.log("dentro de la funcion")
 })
+const g1= filtergeneration(newArray,"generation ii");
+console.log(g1);
+
 
 //console.log(example);
 document.getElementById("bienvenida").classList.remove("hide")
