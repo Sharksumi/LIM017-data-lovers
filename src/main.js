@@ -29,6 +29,15 @@ showData.innerHTML += cardData(characteristics)
 // `
 }
 
+const btnjson = document.querySelector("#btnMain")
+btnjson.addEventListener("click", () => {
+    //console.log("dentro de la funcion")
+})
+const g1= filtergeneration(newArray,"generation ii");
+//console.log(g1);
+
+
+//console.log(example);
 document.getElementById("bienvenida").classList.remove("hide")
 // Funcion para ocultar la tabla de pokemon en la bienvenida
 let btnSee =  document.getElementById("btnMain");
