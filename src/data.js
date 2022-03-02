@@ -3,7 +3,7 @@ export const filtergeneration = (pokemons, generation) => { //filter es usado co
                                                             //en el parametro se pone la info que queremos obtener
     const resultP= pokemons.filter((pokemon)=>{
         if (pokemon.generation.num==generation){
-            console.log(pokemon.generation.num)
+            //console.log(pokemon.generation.num)
             return true;
         }
         else{

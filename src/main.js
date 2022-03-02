@@ -24,7 +24,7 @@ btnjson.addEventListener("click", () => {
     //console.log("dentro de la funcion")
 })
 const g1= filtergeneration(newArray,"generation ii");
-console.log(g1);
+//console.log(g1);
 
 
 //console.log(example);
