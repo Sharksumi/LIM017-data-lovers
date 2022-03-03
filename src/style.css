@@ -4,6 +4,8 @@
 
 body {
   background-image: url(/imagenes/background.png);
+  margin: 0%;
+  width: 1280px;
 }
 
 footer {
@@ -15,6 +17,14 @@ header {
   align-items: center;
   position: relative;
   margin-left: 27%;
+}
+img#pokeWhite {
+  padding: 12px;
+}
+nav{
+  background-color:#302F2C;
+  display: flex;
+  flex-direction: row-reverse;
 }
 
 /*---para la tabla---  */
@@ -76,6 +86,12 @@ tr:hover td {
 
 #johto:hover {
   opacity: 0.5;
+}
+#pokeWhite{
+  height: 50px;
+  width: 50px;
+  display: flex;
+  
 }
 
 .bienvenida {
