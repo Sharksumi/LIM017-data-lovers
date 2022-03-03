@@ -3,9 +3,7 @@
 }
 
 body {
-  background-image: url(/imagenes/background.png);
-  margin: 0%;
-  width: 1280px;
+    margin: 0%;
 }
 
 footer {
@@ -26,6 +24,7 @@ nav{
   display: flex;
   flex-direction: row-reverse;
 }
+
 
 /*---para la tabla---  */
 table {
@@ -72,30 +71,45 @@ tr:hover td {
   }
 
 #kanto {
-  margin-right: 50px;
-  border-color: lightslategray;
-}
-
+  margin-right: -417px; 
+  border: none;
+  background-image: 0.0;
+  
+} 
 #kanto:hover {
   opacity: 0.5;
 }
 
+#kanto img{
+  border-radius: 0px 25px 25px 0px;
+}
+
 #johto {
-  margin-left: 50px;
+  border: none;
 }
 
 #johto:hover {
   opacity: 0.5;
 }
+#johto img{
+border-radius: 25px 0px 0px 25px;
+}
+
 #pokeWhite{
   height: 50px;
   width: 50px;
   display: flex;
-  
+}
+
+#video{
+  display: inline;
+  object-fit: flex;
 }
 
 .bienvenida {
   text-align: center;
+  background-image: url(/imagenes/fondo-pokemon-3.png);
+
 }
 .chart {
   margin: 150px auto;
