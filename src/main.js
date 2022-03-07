@@ -26,14 +26,14 @@ let btnSee =  document.getElementById("btnMain");
 btnSee.addEventListener("click", showTable);
 
 function showTable(){
-  document.getElementById("chart1").classList.remove("hide");
+  document.getElementById("dataPokemon").classList.remove("hide");
   document.getElementById("bienvenida").classList.add("hide");
 }
 
 let bt1= document.getElementById("kanto");
 bt1.addEventListener("click",function(){
 showData.innerHTML="";
-document.getElementById("chart1").classList.remove("hide");
+document.getElementById("dataPokemon").classList.remove("hide");
 document.getElementById("bienvenida").classList.add("hide");
 
 const g1 =filtergeneration(arrayPokemon,"generation i")
@@ -48,7 +48,7 @@ showData.innerHTML += cardData(poke);
 let bt2= document.getElementById("johto");
 bt2.addEventListener("click", function(){
 showData.innerHTML="";
-document.getElementById("chart1").classList.remove("hide");
+document.getElementById("dataPokemon").classList.remove("hide");
 document.getElementById("bienvenida").classList.add("hide");
 const g2=filtergeneration(arrayPokemon,"generation ii");
 
