@@ -12,7 +12,7 @@ const arrMuestra = {
 
 describe('filtergeneration', () => {
   it('Es una función', () => {
-    expect(pokemons,arrMuestra).toBe('true');
+    expect(pokemons,arrMuestra).toBe(filtergeneration);
   });
 
   it('returns `resultP`', () => {

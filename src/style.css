@@ -3,18 +3,11 @@
 }
 
 body {
-<<<<<<< HEAD
     margin: 0%;
     width: 100%;
     max-width: 1280px;
     
   }
-=======
-
-  background-image: url(/imagenes/fondo-pokemon-3.png);
-  margin: 0%;
-}
->>>>>>> 3e1ff921f38d9e89a40498318819976d8e83749a
 
 footer {
   text-align: center;
@@ -82,19 +75,12 @@ tr:hover td {
   }
 
 #kanto {
-  margin-right: -417px;
+  margin-right: -417px; 
   border: none;
-<<<<<<< HEAD
   border-radius: 0px 25px 25px 0px;
   background-image: 0.0;
   
 } 
-=======
-  background: none;
-  position: absolute;
-}
-
->>>>>>> 3e1ff921f38d9e89a40498318819976d8e83749a
 #kanto:hover {
   opacity: 0.5;
 }
@@ -105,11 +91,7 @@ tr:hover td {
 
 #johto {
   border: none;
-<<<<<<< HEAD
   border-radius: 25px 0px 0px 25px;
-=======
-  background: none;
->>>>>>> 3e1ff921f38d9e89a40498318819976d8e83749a
 }
 
 #johto:hover {
@@ -125,7 +107,6 @@ border-radius: 25px 0px 0px 25px;
   display: flex;
 }
 
-
 #video{
   display: inline;
   object-fit: flex;
@@ -133,8 +114,9 @@ border-radius: 25px 0px 0px 25px;
 
 .bienvenida {
   text-align: center;
-}
+  background-image: url(/imagenes/fondo-pokemon-3.png);
 
+}
 .chart {
   margin: 150px auto;
   width: 800px;
@@ -143,4 +125,8 @@ border-radius: 25px 0px 0px 25px;
 
 .hide {
   display: none;
+}
+
+@media screen {
+  
 }
