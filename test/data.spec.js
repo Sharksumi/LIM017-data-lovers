@@ -1,13 +1,13 @@
-import { example, anotherExample } from '../src/data.js';
+import { filtergeneration, anotherExample } from '../src/data.js';
 
 
-describe('example', () => {
+describe('filtergeneration', () => {
   it('is a function', () => {
-    expect(typeof example).toBe('function');
+    expect(typeof filtergeneration).toBe('function');
   });
 
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
+  it('returns `resultP`', () => {
+    expect(true).toBe('resultP');
   });
 });
 
