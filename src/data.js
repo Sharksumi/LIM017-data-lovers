@@ -15,9 +15,18 @@ return resultP;
 }
 
 
-export const datajson = () => {
-return "datajson"
+export const orderPokemons = (pokemons,name) => {
+    const upPokemon=pokemons.sort((pokemons) =>{  
+        if(pokemons==name){
+            return name -1;
+        }else{
+            return false;
+        }
+    });
+         
+return upPokemon;
 };
+
 
 export const anotherExample = () => {
 return 'OMG';

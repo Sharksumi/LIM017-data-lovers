@@ -32,33 +32,13 @@ nav{
   background-color:#302F2C;
   display: flex;
   flex-direction: row-reverse;
+  justify-content: space-between;
 }
 
 
-/*---para la tabla---  */
-table {
-  width: 100%;
-  background-color: black;
-  text-align: center;
-  border-collapse: collapse;
-  color: aliceblue;
-  /* margin-top: -97px; */
-}
-
-th,
-td {
-  border: solid 1px red;
-  padding: 0%;
-}
-
-thead {
-  background-color: white;
-  color: black;
-}
-
-tr:hover td {
+main .pkmnPrueba :hover {
   background-color: rgb(255, 251, 251);
-  color: black;
+  color: rgb(216, 215, 215);
 }
 
 #btnMain {
@@ -107,6 +87,17 @@ tr:hover td {
 #johto img{
 border-radius: 25px 0px 0px 25px;
 }
+#searchPoke{
+  display: flex;
+  align-items: flex-end;
+  margin: 15px;
+  border-radius: 5px;
+    /* flex-direction: row; */
+  border: none;
+  background: lightgrey;
+  color: #302F2C;
+}
+
 
 #showData{
   display: flex;
