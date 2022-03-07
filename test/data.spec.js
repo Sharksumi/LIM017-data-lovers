@@ -1,9 +1,18 @@
 import { filtergeneration, anotherExample } from '../src/data.js';
+import pokemons from './data/pokemon/pokemon.js';
 
+const arrMuestra = {
+  "num": "223",
+  "name": "remoraid",
+  "generation": {
+    "num": "generation ii",
+    "name": "johto"
+  }
+}
 
 describe('filtergeneration', () => {
-  it('is a function', () => {
-    expect(typeof filtergeneration).toBe('function');
+  it('Es una función', () => {
+    expect(pokemons,arrMuestra).toBe('true');
   });
 
   it('returns `resultP`', () => {

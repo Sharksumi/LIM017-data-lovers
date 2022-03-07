@@ -7,13 +7,13 @@ const showData = document.querySelector("#showData"); //obtenemos este id para
 showData.innerHTML = ""; //mostrar en la pag web, va vacío para limpiarlo cada vez que itere el ciclo
 //aplicar ciclo de for para iterar por los elementos del array
 const cardData = (characteristics) =>`
-<tr>
-  <td>${characteristics.num}</td>
-  <td>${characteristics.name.charAt(0).toUpperCase() + characteristics.name.slice(1)}</td>  
-  <td><img src="${characteristics.img}"></td>
-  <td>${characteristics.generation.num.toUpperCase()}</td>
-  <td>${characteristics.generation.name.charAt(0).toUpperCase() + characteristics.generation.name.slice(1)}</td>
-</tr>
+<section>
+  <div class="num">${characteristics.num}</div>
+  <div class="name">${characteristics.name.charAt(0).toUpperCase() + characteristics.name.slice(1)}</div>  
+  <div><img src="${characteristics.img}"></div>
+  <div>${characteristics.generation.num.toUpperCase()}</div>
+  <div>${characteristics.generation.name.charAt(0).toUpperCase() + characteristics.generation.name.slice(1)}</div>
+</section>
 `
 for (let characteristics of arrayPokemon) {
 //console.log(characteristics.num);
