@@ -1,4 +1,4 @@
-import { filtergeneration } from './data.js';
+import { filtergeneration, orderPokemons } from './data.js';
 
 import pokemons from './data/pokemon/pokemon.js'; //importamos los datos del array 
 const arrayPokemon = pokemons.pokemon; // guardamos esos datos en un nuevo array, lo extendi a pokemon para ingresar al array
@@ -57,3 +57,13 @@ for(let poke of g2){
 }
 })
 //console.log(g2);
+const ascendentP= document.getElementById("ascendent");
+ascendentP.addEventListener("click",()=>{
+  showData.innerHTML="";
+  document.getElementById("dataPokemon").classList.remove("hide");
+  document.getElementById("bienvenida").classList.add("hide");
+  const orderUp = orderPokemons (arrayPokemon, "name");
+  for(let aZorder of orderUp){
+  showData.innerHTML+=cardData(aZorder)}
+})
+console.log(showData);
