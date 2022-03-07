@@ -7,7 +7,11 @@ body {
     width: 100%;
     max-width: 1280px;
     
-  }
+main {
+background-image: url(/imagenes/fondo-pokemon-3.png);
+  margin: 0%;
+}
+
 
 footer {
   text-align: center;
@@ -21,6 +25,11 @@ header {
 }
 img#pokeWhite {
   padding: 12px;
+}
+main{
+  padding: 25px;
+  text-align: center;
+  
 }
 nav{
   background-color:#302F2C;
@@ -79,8 +88,7 @@ tr:hover td {
   border: none;
   border-radius: 0px 25px 25px 0px;
   background-image: 0.0;
-  
-} 
+
 #kanto:hover {
   opacity: 0.5;
 }
@@ -92,13 +100,19 @@ tr:hover td {
 #johto {
   border: none;
   border-radius: 25px 0px 0px 25px;
-}
+  background: none;
+
 
 #johto:hover {
   opacity: 0.5;
 }
 #johto img{
 border-radius: 25px 0px 0px 25px;
+}
+
+#showData{
+  display: flex;
+  flex-wrap: wrap;
 }
 
 #pokeWhite{
@@ -116,7 +130,7 @@ border-radius: 25px 0px 0px 25px;
   text-align: center;
   background-image: url(/imagenes/fondo-pokemon-3.png);
 
-}
+
 .chart {
   margin: 150px auto;
   width: 800px;
@@ -127,6 +141,13 @@ border-radius: 25px 0px 0px 25px;
   display: none;
 }
 
-@media screen {
-  
+.pkmnPrueba{
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  margin: 10px;
 }
+
+@media screen {
+  }
+  
+

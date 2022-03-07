@@ -7,13 +7,13 @@ const showData = document.querySelector("#showData"); //obtenemos este id para
 showData.innerHTML = ""; //mostrar en la pag web, va vacío para limpiarlo cada vez que itere el ciclo
 //aplicar ciclo de for para iterar por los elementos del array
 const cardData = (characteristics) =>`
-<section>
-  <div class="num">${characteristics.num}</div>
-  <div class="name">${characteristics.name.charAt(0).toUpperCase() + characteristics.name.slice(1)}</div>  
-  <div><img src="${characteristics.img}"></div>
-  <div>${characteristics.generation.num.toUpperCase()}</div>
-  <div>${characteristics.generation.name.charAt(0).toUpperCase() + characteristics.generation.name.slice(1)}</div>
-</section>
+<main class= "pkmnPrueba">
+  <div class="jsNum">${characteristics.num}</div>
+  <div class="jsName">${characteristics.name.charAt(0).toUpperCase() + characteristics.name.slice(1)}</div>  
+  <div class="jsImg"><img src="${characteristics.img}"></div>
+  <div class="jsGen">${characteristics.generation.num.toUpperCase()}</div>
+  <div class= "jsGenNum">${characteristics.generation.name.charAt(0).toUpperCase() + characteristics.generation.name.slice(1)}</div>
+</main>
 `
 for (let characteristics of arrayPokemon) {
 //console.log(characteristics.num);
@@ -26,14 +26,14 @@ let btnSee =  document.getElementById("btnMain");
 btnSee.addEventListener("click", showTable);
 
 function showTable(){
-  document.getElementById("chart1").classList.remove("hide");
+  document.getElementById("dataPokemon").classList.remove("hide");
   document.getElementById("bienvenida").classList.add("hide");
 }
 
 let bt1= document.getElementById("kanto");
 bt1.addEventListener("click",function(){
 showData.innerHTML="";
-document.getElementById("chart1").classList.remove("hide");
+document.getElementById("dataPokemon").classList.remove("hide");
 document.getElementById("bienvenida").classList.add("hide");
 
 const g1 =filtergeneration(arrayPokemon,"generation i")
@@ -48,7 +48,7 @@ showData.innerHTML += cardData(poke);
 let bt2= document.getElementById("johto");
 bt2.addEventListener("click", function(){
 showData.innerHTML="";
-document.getElementById("chart1").classList.remove("hide");
+document.getElementById("dataPokemon").classList.remove("hide");
 document.getElementById("bienvenida").classList.add("hide");
 const g2=filtergeneration(arrayPokemon,"generation ii");
 
