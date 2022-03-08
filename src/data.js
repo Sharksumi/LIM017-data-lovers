@@ -51,7 +51,7 @@ export const orderPokemons = (pokemons, name) => {
     }
   });
 
-  console.log(upPokemon);
+  // console.log(upPokemon);
   return upPokemon;
 };
 
