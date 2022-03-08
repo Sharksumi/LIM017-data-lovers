@@ -54,7 +54,12 @@ export const filtergeneration = (pokemons, generation) => {
     // console.log(upPokemon);
     return upPokemon;
   };
-  
+  // Función buscar 
+ export const buscar()=> {
+   
+
+}
   export const anotherExample = () => {
     return "OMG";
   };
+
