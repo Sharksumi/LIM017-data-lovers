@@ -3,6 +3,7 @@ import {
   orderPokemons,
   orderPokemonAscendent,
   orderPokemonDescendent,
+  buscar
 } from "./data.js";
 
 import pokemonList from "./data/pokemon/pokemon.js"; //importamos los datos del array
@@ -111,3 +112,15 @@ pokemonSort.addEventListener("change", () => {
     }
   }
 });
+
+let buscaPokemon = document.getElementById("buscador")
+buscaPokemon.addEventListener("click",()=>{
+let inputBuscador = document.getElementById("searchPoke").value;
+
+showData.innerHTML = "";
+document.getElementById("dataPokemon").classList.remove("hide");
+document.getElementById("bienvenida").classList.add("hide");
+const searchingPokemon = buscar(arrayPokemon,inputBuscador);
+showData.innerHTML += cardData(searchingPokemon);
+})
+

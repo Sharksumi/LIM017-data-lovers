@@ -55,8 +55,9 @@ export const filtergeneration = (pokemons, generation) => {
     return upPokemon;
   };
   // Función buscar 
- export const buscar()=> {
-   
+ export const buscar = (pokemonList,name)=> {
+ const findPokemon = pokemonList.find(element => element.name.toLowerCase() === name.toLowerCase());
+ return findPokemon;
 
 }
   export const anotherExample = () => {
