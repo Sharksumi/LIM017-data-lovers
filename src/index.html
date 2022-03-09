@@ -1,52 +1,54 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta charset="utf-8" />
-    <title>Data Lovers</title>
-    <link rel="shortcut icon" href="/imagenes/pokeball-favicon.png" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
 
-  <body>
-    <nav>
-      <img id="pokeWhite" src="/imagenes/pokeball-blanco.png" />
-      <!-- Para insertar buscador -->
-      <input type="search" id="searchPoke"/> <button id="buscador">Buscar</button>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <title>Data Lovers</title>
+  <link rel="shortcut icon" href="/imagenes/pokeball-favicon.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-      <select id="pokemonSort">
-        <option value="" disabled selected>Ordenar por:</option>
-        <option id="ascendent" value="ascendent">Ascendente A-Z</option>
-        <option id="descendent" value="descendent">Descendente Z-A</option>
-        <option id="numero" value="numero">Por número</option>
-      </select>
-    </nav>
-    <section id="video">
-      <!-- <video width="1280" height="720" loop="" autoplay="">
-      <source src="/imagenes/pokemon-in-the-wild.mp4" type="video/mp4">
-    </video> -->
+<body>
+  <nav>
+    <img id="pokeWhite" src="/imagenes/pokeball-blanco.png" />
+    <!-- Para insertar buscador -->
+    <button id="buscador">Buscar</button>
+    <input type="search" id="searchPoke" />
+    <select id="pokemonSort">
+      <option value="" disabled selected>Ordenar por:</option>
+      <option id="ascendent" value="ascendent">Ascendente A-Z</option>
+      <option id="descendent" value="descendent">Descendente Z-A</option>
+      <option id="numero" value="numero">Por número</option>
+    </select>
+  </nav>
+  <!-- <section id="video"> -->
+    <!-- <video width="1580" height="720" loop="" autoplay=""> -->
+      <!-- <source src="/imagenes/pokemon-in-the-wild.mp4" type="video/mp4"> -->
+    <!-- </video> -->
+  </section>
+  <div class="bienvenida hide" id="bienvenida">
+    <h1>Bienvenido a la pokedex</h1>
+    <section id="region" class="region">
+      <h3>Elige una región</h3>
+      <button id="kanto">
+        <img src="/imagenes/kanto-logo-boton.png" />
+
+      </button>
+      <button id="johto"><img src="/imagenes/mapa-johto-boton.png" /></button>
     </section>
-    <div class="bienvenida hide" id="bienvenida">
-      <h1>Bienvenido a la pokedex</h1>
-      <section id="region" class="region">
-        <h3>Elige una región</h3>
-        <button id="kanto">
-          <img src="/imagenes/kanto-logo-boton.png" />
-          <p id="textKanto">KANTO</p>
-        </button>
-        <button id="johto"><img src="/imagenes/mapa-johto-boton.png" /></button>
-      </section>
 
-      <button id="btnMain" class="btnMain">Ver toda la Pokedex</button>
+    <button id="btnMain" class="btnMain">Ver toda la Pokedex</button>
+  </div>
+  <!-- para mostrar la data de los pokemon -->
+  <main class="pkmnMain hide" id="dataPokemon">
+    <div id="table">
+      <div class="bodydata" id="showData"></div>
     </div>
-    <!-- para mostrar la data de los pokemon -->
-    <main class="pkmnMain hide" id="dataPokemon">
-      <div id="table">
-        <div class="bodydata" id="showData"></div>
-      </div>
-    </main>
-    <!-- <div id="root"></div> -->
-    <script src="main.js" type="module"></script>
-    <footer>NEON</footer>
-  </body>
+  </main>
+  <!-- <div id="root"></div> -->
+  <script src="main.js" type="module"></script>
+  <footer>NEON</footer>
+</body>
+
 </html>
