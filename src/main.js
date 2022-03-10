@@ -8,21 +8,19 @@ import {
 
 import pokemonList from "./data/pokemon/pokemon.js"; //importamos los datos del array
 const arrayPokemon = pokemonList.pokemon; // guardamos esos datos en un nuevo array, lo extendi a pokemon para ingresar al array
-//console.log(newArray);
+//console.log(arrayPokemon);
 const showData = document.querySelector("#showData"); //obtenemos este id para
 showData.innerHTML = ""; //mostrar en la pag web, va vacío para limpiarlo cada vez que itere el ciclo
 //aplicar ciclo de for para iterar por los elementos del array
 const cardData = (characteristics) => `
-<main class= "pkmnPrueba">
+<main class= "pkmCard" id="pkmCard">
   <div class="jsNum">${characteristics.num}</div>
-  <div class="jsName">${
-    characteristics.name.charAt(0).toUpperCase() + characteristics.name.slice(1)
+  <div class="jsName">${characteristics.name.charAt(0).toUpperCase() + characteristics.name.slice(1)
   }</div>
   <div class="jsImg"><img src="${characteristics.img}"></div>
   <div class="jsGen">${characteristics.generation.num.toUpperCase()}</div>
-  <div class= "jsGenNum">${
-    characteristics.generation.name.charAt(0).toUpperCase() +
-    characteristics.generation.name.slice(1)
+  <div class= "jsGenNum">${characteristics.generation.name.charAt(0).toUpperCase() +
+  characteristics.generation.name.slice(1)
   }</div>
 </main>
 `;
@@ -36,6 +34,7 @@ document.getElementById("bienvenida").classList.remove("hide");
 let btnSee = document.getElementById("btnMain");
 btnSee.addEventListener("click", showTable);
 
+
 function showTable() {
   document.getElementById("dataPokemon").classList.remove("hide");
   document.getElementById("bienvenida").classList.add("hide");
@@ -48,6 +47,7 @@ bt1.addEventListener("click", function () {
   document.getElementById("bienvenida").classList.add("hide");
 
   const g1 = filtergeneration(arrayPokemon, "generation i");
+  
   for (let poke of g1) {
     showData.innerHTML += cardData(poke);
   }
@@ -59,8 +59,9 @@ bt2.addEventListener("click", function () {
   showData.innerHTML = "";
   document.getElementById("dataPokemon").classList.remove("hide");
   document.getElementById("bienvenida").classList.add("hide");
-  const g2 = filtergeneration(arrayPokemon, "generation ii");
 
+
+  const g2 = filtergeneration(arrayPokemon, "generation ii");
   for (let poke of g2) {
     showData.innerHTML += cardData(poke);
   }
@@ -114,13 +115,13 @@ pokemonSort.addEventListener("change", () => {
 });
 
 let buscaPokemon = document.getElementById("buscador")
-buscaPokemon.addEventListener("click",()=>{
-let inputBuscador = document.getElementById("searchPoke").value;
+buscaPokemon.addEventListener("click", () => {
+  let inputBuscador = document.getElementById("searchPoke").value;
 
-showData.innerHTML = "";
-document.getElementById("dataPokemon").classList.remove("hide");
-document.getElementById("bienvenida").classList.add("hide");
-const searchingPokemon = buscar(arrayPokemon,inputBuscador);
-showData.innerHTML += cardData(searchingPokemon);
+  showData.innerHTML = "";
+  document.getElementById("dataPokemon").classList.remove("hide");
+  document.getElementById("bienvenida").classList.add("hide");
+  const searchingPokemon = buscar(arrayPokemon, inputBuscador);
+  showData.innerHTML += cardData(searchingPokemon);
 })
 
