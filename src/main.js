@@ -3,7 +3,8 @@ import {
   orderPokemons,
   orderPokemonAscendent,
   orderPokemonDescendent,
-  buscar
+  buscar,
+  sortByHp //agregado  como prueba de calculo
 } from "./data.js";
 
 import pokemonList from "./data/pokemon/pokemon.js"; //importamos los datos del array
@@ -12,8 +13,10 @@ const arrayPokemon = pokemonList.pokemon; // guardamos esos datos en un nuevo ar
 const showData = document.querySelector("#showData"); //obtenemos este id para
 showData.innerHTML = ""; //mostrar en la pag web, va vacío para limpiarlo cada vez que itere el ciclo
 //aplicar ciclo de for para iterar por los elementos del array
+
+//Agregado el ID unico para poder asignar el valor de cada pokemon por ID
 const cardData = (characteristics) => `
-<main class= "pkmCard" id="pkmCard">
+<main class= "pkmCard" id="${characteristics.num}">
   <div class="jsNum">${characteristics.num}</div>
   <div class="jsName">${characteristics.name.charAt(0).toUpperCase() + characteristics.name.slice(1)
   }</div>
@@ -24,10 +27,47 @@ const cardData = (characteristics) => `
   }</div>
 </main>
 `;
+//agregar una funcion de event listener para cada tarjeta
+const cardDataAddEvent = (characteristics) =>{
+let card = document.getElementById(characteristics.num);
+card.addEventListener('click', () => showPokemonDetails(characteristics))
+
+}
+//plantilla nueva de pokemon unico 
+const pokemonDetails = (pokemonData) =>
+` <div id="description">
+    <section id="pokemonDetails">
+    ${pokemonData.num}
+    ${pokemonData.name}
+    ${pokemonData.img}
+    ${pokemonData.type}
+    ${pokemonData.about}
+    ${pokemonData.egg}
+    ${pokemonData.stats["max-hp"]}
+  </section>
+</div>
+`
+// para mostrar la nueva plantilla
+const showPokemonDetails = (pokemonData) => {
+showData.innerHTML=""
+showData.innerHTML += pokemonDetails(pokemonData)
+}
+
+
 for (let characteristics of arrayPokemon) {
   //console.log(characteristics.num);
   showData.innerHTML += cardData(characteristics);
+  
 }
+// for (let seePokemonData of arrayPokemon){
+//    pokemonDetails.innerHTML += cardData(seePokemonData); 
+// }
+
+//// agregado solo la instruccion para el listener
+for (let pokemon of arrayPokemon) {
+  cardDataAddEvent(pokemon);
+}
+
 
 document.getElementById("bienvenida").classList.remove("hide");
 // Funcion para ocultar la tabla de pokemon en la bienvenida
@@ -108,9 +148,12 @@ pokemonSort.addEventListener("change", () => {
   }
 
   if (descendent === "numero") {
-    for (let pokemon of arrayPokemon) {
-      showData.innerHTML += cardData(pokemon);
-    }
+    showPokemonInfo(arrayPokemon);
+  }
+//opción  para calcular los pokemon por max hp (el mayor va primero)
+  if (descendent === "hp") {
+    const sortedPokemon = sortByHp(arrayPokemon);
+    showPokemonInfo(sortedPokemon);
   }
 });
 
@@ -125,3 +168,14 @@ buscaPokemon.addEventListener("click", () => {
   showData.innerHTML += cardData(searchingPokemon);
 })
 
+// nueva funcion para mostrar  la data de todos los pokemon de la lista 
+// agrega el event listener a cada carga nueva 
+const showPokemonInfo = (pokemonList) => {
+  for (let pokemon of pokemonList) {
+    showData.innerHTML += cardData(pokemon);
+  }
+
+  for (let pokemon of pokemonList) {
+    cardDataAddEvent(pokemon);
+  }
+}
