@@ -39,7 +39,7 @@ const pokemonDetails = (pokemonData) =>
     <section id="pokemonDetails">
     ${pokemonData.num}
     ${pokemonData.name}
-    ${pokemonData.img}
+    <img src="${pokemonData.img}">
     ${pokemonData.type}
     ${pokemonData.about}
     ${pokemonData.egg}
