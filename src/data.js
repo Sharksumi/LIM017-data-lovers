@@ -26,7 +26,25 @@ export const filtergeneration = (pokemons, generation) => {
   
     return sortedPokemon;
   };
-  
+
+export const sortByHp = (pokemonList) => {
+    const pokemonListCopy = pokemonList.slice();
+const calculador = pokemonListCopy.sort((a,b) => {
+   if (a.stats["max-hp"] > b.stats["max-hp"]) {
+     return 1;
+   }else if (a.stats["max-hp"] < b.stats["max-hp"]) {
+       return -1;
+   } else {
+     return 0;
+   }
+ });
+  return calculador;
+  }
+ 
+
+
+
+
   export const orderPokemonDescendent = (pokemonList) => {
     const pokemonListCopy = pokemonList.slice();
     const sortedPokemon = pokemonListCopy.sort((a, b) => {

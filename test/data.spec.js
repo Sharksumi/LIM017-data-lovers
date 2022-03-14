@@ -19,7 +19,6 @@ import { filtergeneration, orderPokemonAscendent, orderPokemonDescendent } from 
     "grass",
     "poison"
   ],
-  
 },
 {
   "num": "002",
