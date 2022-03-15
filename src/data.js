@@ -78,24 +78,39 @@ export const filtergeneration = (pokemons, generation) => {
 //filtrar por cantidad de kilometros para reventar un huevo
 export const groupEggs =(pokemonList)=>{
   let notAnEggArray =  pokemonList.filter(pokemon => pokemon.egg === "not in eggs");
-  let twoKmsEggArray = pokemonList.filter(Pokemon => Pokemon.egg === "2 km");
-  let fiveKmsEggArray = pokemonList.filter(Pokemon => Pokemon.egg === "5 km");
-  let sevenKmsEggArray = pokemonList.filter(Pokemon => Pokemon.egg === "7 km");
-  let tenKmsEggArray = pokemonList.filter(Pokemon => Pokemon.egg === "10 km");
+  if (notAnEggArray == true){
+   const eggCounted = ((notAnEggArray.length)/251)*100;
+   
+   return Math.round(eggCounted);
+  }
+}
+  // let twoKmsEggArray = pokemonList.filter(Pokemon => Pokemon.egg === "2 km");
+  // let fiveKmsEggArray = pokemonList.filter(Pokemon => Pokemon.egg === "5 km");
+  // let sevenKmsEggArray = pokemonList.filter(Pokemon => Pokemon.egg === "7 km");
+  // let tenKmsEggArray = pokemonList.filter(Pokemon => Pokemon.egg === "10 km");
 
 
   //contabilizar y agrupar los tipos de huevo segun su kilometraje
-  let resultEgg =[];
-      resultEgg["notAnEggArray"] = notAnEggArray;
-      resultEgg["twoKmsEggArray"] = twoKmsEggArray;
-      resultEgg["fiveKmsEggArray"] = fiveKmsEggArray;
-      resultEgg["sevenKmsEggArray"] = sevenKmsEggArray;
-      resultEgg["tenKmsEggArray"] = tenKmsEggArray;
+  // let resultEgg =[];
+  //     resultEgg["notAnEggArray"] = notAnEggArray;
+  //     resultEgg["twoKmsEggArray"] = twoKmsEggArray;
+  //     resultEgg["fiveKmsEggArray"] = fiveKmsEggArray;
+  //     resultEgg["sevenKmsEggArray"] = sevenKmsEggArray;
+  //     resultEgg["tenKmsEggArray"] = tenKmsEggArray;
     
-      return resultEgg;
-    }
+  //     return resultEgg;
+  
+  //   }
+    
 
 //funcion contando huevos
+// const noEggs = ((eggs.notAnEggArray.length)/251)*100     //153;
+// const twoKmsEggs = ((eggs.twoKmsEggArray.length)/251)*100 //23;
+// const fiveKmsEggs = ((eggs.fiveKmsEggArray.length)/251)*100//53;
+// const sevenKmsEggs = ((eggs.sevenKmsEggArray.length)/251)*100//8;
+// const tenKmsEggs = ((eggs.tenKmsEggArray.length)/251)*100//14;
+
+
 //  export const countingEggs = (resultEgg) => {
   
   
