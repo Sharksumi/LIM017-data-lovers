@@ -23,26 +23,23 @@ export const filtergeneration = (pokemons, generation) => {
         return 0;
       }
     });
-  
+
     return sortedPokemon;
   };
 
-export const sortByHp = (pokemonList) => {
-    const pokemonListCopy = pokemonList.slice();
-const calculador = pokemonListCopy.sort((a,b) => {
-   if (a.stats["max-hp"] > b.stats["max-hp"]) {
-     return 1;
-   }else if (a.stats["max-hp"] < b.stats["max-hp"]) {
-       return -1;
-   } else {
-     return 0;
-   }
- });
-  return calculador;
-  }
- 
-
-
+// export const sortByHp = (pokemonList) => {
+//     const pokemonListCopy = pokemonList.slice();
+// const calculador = pokemonListCopy.sort((a,b) => {
+//   if (a.stats["max-hp"] > b.stats["max-hp"]) {
+//     return 1;
+//   }else if (a.stats["max-hp"] < b.stats["max-hp"]) {
+//       return -1;
+//   } else {
+//     return 0;
+//   }
+// });
+//   return calculador;
+//   }
 
 
   export const orderPokemonDescendent = (pokemonList) => {
@@ -78,7 +75,28 @@ const calculador = pokemonListCopy.sort((a,b) => {
  return findPokemon;
 
 }
-  export const anotherExample = () => {
-    return "OMG";
-  };
+//filtrar por cantidad de kilometros para reventar un huevo
+export const groupEggs =(pokemonList)=>{
+  let notAnEggArray =  pokemonList.filter(pokemon => pokemon.egg === "not in eggs");
+  let twoKmsEggArray = pokemonList.filter(Pokemon => Pokemon.egg === "2 km");
+  let fiveKmsEggArray = pokemonList.filter(Pokemon => Pokemon.egg === "5 km");
+  let sevenKmsEggArray = pokemonList.filter(Pokemon => Pokemon.egg === "7 km");
+  let tenKmsEggArray = pokemonList.filter(Pokemon => Pokemon.egg === "10 km");
+
+
+  //contabilizar y agrupar los tipos de huevo segun su kilometraje
+  let resultEgg =[];
+      resultEgg["notAnEggArray"] = notAnEggArray;
+      resultEgg["twoKmsEggArray"] = twoKmsEggArray;
+      resultEgg["fiveKmsEggArray"] = fiveKmsEggArray;
+      resultEgg["sevenKmsEggArray"] = sevenKmsEggArray;
+      resultEgg["tenKmsEggArray"] = tenKmsEggArray;
+    
+      return resultEgg;
+    }
+
+
+  // export const anotherExample = () => {
+  //   return "OMG";
+  // };
 

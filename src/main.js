@@ -1,10 +1,4 @@
-import {
-  filtergeneration,
-  orderPokemons,
-  orderPokemonAscendent,
-  orderPokemonDescendent,
-  buscar,
-  sortByHp //agregado  como prueba de calculo
+import {filtergeneration, orderPokemons, orderPokemonAscendent, orderPokemonDescendent, buscar, groupEggs //agregado  como prueba de calculo
 } from "./data.js";
 
 import pokemonList from "./data/pokemon/pokemon.js"; //importamos los datos del array
@@ -18,18 +12,17 @@ showData.innerHTML = ""; //mostrar en la pag web, va vacío para limpiarlo cada 
 const cardData = (characteristics) => `
 <main class= "pkmCard" id="${characteristics.num}">
   <div class="jsNum">${characteristics.num}</div>
-  <div class="jsName">${characteristics.name.charAt(0).toUpperCase() + characteristics.name.slice(1)
-  }</div>
+  <div class="jsName">${characteristics.name.charAt(0).toUpperCase() + characteristics.name.slice(1)}</div>
   <div class="jsImg"><img src="${characteristics.img}"></div>
   <div class="jsGen">${characteristics.generation.num.toUpperCase()}</div>
   <div class= "jsGenNum">${characteristics.generation.name.charAt(0).toUpperCase() +
-  characteristics.generation.name.slice(1)
-  }</div>
+  characteristics.generation.name.slice(1)}</div>
 </main>
 `;
-//agregar una funcion de event listener para cada tarjeta
+//agregar una funcion de event listener a la primera carga de la data
 const cardDataAddEvent = (characteristics) =>{
 let card = document.getElementById(characteristics.num);
+console.log(card);
 card.addEventListener('click', () => showPokemonDetails(characteristics))
 
 }
@@ -37,20 +30,20 @@ card.addEventListener('click', () => showPokemonDetails(characteristics))
 const pokemonDetails = (pokemonData) =>
 ` <div id="description">
     <section id="pokemonDetails">
-    ${pokemonData.num}
-    ${pokemonData.name}
-    ${pokemonData.img}
-    ${pokemonData.type}
-    ${pokemonData.about}
-    ${pokemonData.egg}
-    ${pokemonData.stats["max-hp"]}
-  </section>
-</div>
+      <div class="">${pokemonData.num}</div>
+      <div class="">${pokemonData.name}</div>
+      <div class=""><img src="${pokemonData.img}"></div>
+      <div class="">${pokemonData.type}</div>
+      <div class="">${pokemonData.about}</div>
+      <div class="">${pokemonData.egg}</div>
+      <div class="">${pokemonData.stats["max-hp"]}</div>
+    </section>
+  </div>
 `
 // para mostrar la nueva plantilla
 const showPokemonDetails = (pokemonData) => {
-showData.innerHTML=""
-showData.innerHTML += pokemonDetails(pokemonData)
+  showData.innerHTML=""
+  showData.innerHTML += pokemonDetails(pokemonData)
 }
 
 
@@ -63,7 +56,7 @@ for (let characteristics of arrayPokemon) {
 //    pokemonDetails.innerHTML += cardData(seePokemonData); 
 // }
 
-//// agregado solo la instruccion para el listener
+// agregado solo la instruccion para el listener
 for (let pokemon of arrayPokemon) {
   cardDataAddEvent(pokemon);
 }
@@ -71,8 +64,8 @@ for (let pokemon of arrayPokemon) {
 
 document.getElementById("bienvenida").classList.remove("hide");
 // Funcion para ocultar la tabla de pokemon en la bienvenida
-let btnSee = document.getElementById("btnMain");
-btnSee.addEventListener("click", showTable);
+  let btnSee = document.getElementById("btnMain");
+  btnSee.addEventListener("click", showTable);
 
 
 function showTable() {
@@ -108,11 +101,11 @@ bt2.addEventListener("click", function () {
 });
 //console.log(g2);
 const ascendentP = document.getElementById("ascendent");
-ascendentP.addEventListener("change", () => {
+  ascendentP.addEventListener("change", () => {
   // console.log("Ascendent Called");
-  showData.innerHTML = "";
-  document.getElementById("dataPokemon").classList.remove("hide");
-  document.getElementById("bienvenida").classList.add("hide");
+    showData.innerHTML = "";
+    document.getElementById("dataPokemon").classList.remove("hide");
+    document.getElementById("bienvenida").classList.add("hide");
   const orderUp = orderPokemons(arrayPokemon, "name");
   // console.log(orderUp);
   for (let aZorder of orderUp) {
@@ -153,11 +146,13 @@ pokemonSort.addEventListener("change", () => {
     showPokemonInfo(arrayPokemon);
   }
 //opción  para calcular los pokemon por max hp (el mayor va primero)
-  if (descendent === "hp") {
-    const sortedPokemon = sortByHp(arrayPokemon);
-    showPokemonInfo(sortedPokemon);
-  }
+  // if (descendent === "hp") {
+  //   const sortedPokemon = sortByHp(arrayPokemon);
+  //   showPokemonInfo(sortedPokemon);
+  // }
+  //console.log("showPokemonInfo");
 });
+
 
 let buscaPokemon = document.getElementById("buscador")
 buscaPokemon.addEventListener("click", () => {
@@ -181,3 +176,9 @@ const showPokemonInfo = (pokemonList) => {
     cardDataAddEvent(pokemon);
   }
 }
+// para saber el numero exacto de objetos por tipo de huevos
+let eggs = groupEggs(arrayPokemon)
+// el length el la cantidad de objetos en cada grupo determinado de huevos
+console.log(eggs.notAnEggArray.length + "/251");
+ //sintaxis =  eggs . grupo . length 
+
