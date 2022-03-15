@@ -95,8 +95,11 @@ export const groupEggs =(pokemonList)=>{
       return resultEgg;
     }
 
+//funcion contando huevos
+//  export const countingEggs = (resultEgg) => {
+  
+  
 
-  // export const anotherExample = () => {
-  //   return "OMG";
-  // };
+//    return 
+// };
 

@@ -12,7 +12,7 @@ body {
    background-repeat:no-repeat;
   }
 
-  button#buscador {
+button#buscador {
     width: 41.07px;
     /* height: 35.64px; */
     left: 468.53px;
@@ -75,9 +75,6 @@ main .bodydata :hover {
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
       0 17px 50px 0 rgba(0, 0, 0, 0.19);
   }
-  .imgSearch{
-    width: 29px;
-  }
 
 #kanto {
   margin-right: -417px; 
@@ -135,8 +132,6 @@ border-radius: 25px 0px 0px 25px;
     font-size: 20px;
 }
 
-
-
 #showData{
   display: flex;
   flex-wrap: wrap;
@@ -164,14 +159,23 @@ display: flex;
   background-image: url(/imagenes/fondo-pokemon-3.png);
 }
 
+.cardEggs{
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .chart {
   margin: 150px auto;
   width: 800px;
   text-align: center;
 }
 
+
 .hide {
   display: none;
+}
+.imgSearch{
+  width: 29px;
 }
 
 .pkmnPrueba{

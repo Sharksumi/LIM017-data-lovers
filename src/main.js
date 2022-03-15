@@ -179,6 +179,31 @@ const showPokemonInfo = (pokemonList) => {
 // para saber el numero exacto de objetos por tipo de huevos
 let eggs = groupEggs(arrayPokemon)
 // el length el la cantidad de objetos en cada grupo determinado de huevos
-console.log(eggs.notAnEggArray.length + "/251");
- //sintaxis =  eggs . grupo . length 
+//console.log(eggs.tenKmsEggArray.length + "/251");
+
+//cantidad exacta en enteros de huevos por kilometraje
+const noEggs = ((eggs.notAnEggArray.length)/251)*100     //153;
+const twoKmsEggs = ((eggs.twoKmsEggArray.length)/251)*100 //23;
+const fiveKmsEggs = ((eggs.fiveKmsEggArray.length)/251)*100//53;
+const sevenKmsEggs = ((eggs.sevenKmsEggArray.length)/251)*100//8;
+const tenKmsEggs = ((eggs.tenKmsEggArray.length)/251)*100//14;
+
+//calculo del porcentaje de cada huevo con respecto al total
+//const proportionalEggs = (noEggs/251)*100;
+
+
+
+
+
+//agregar el boton para mostrar los huevos y mostrarlos en cada sección por tipo de huevo
+const btnEggs = document.getElementById("btnEggs")
+btnEggs.addEventListener("click",()=> {
+  document.getElementById("conteoDeHuevos").classList.remove("hide");
+  document.getElementById("bienvenida").classList.add("hide");
+  document.getElementById("noHuevo").innerHTML += "El " + Math.round(noEggs)+ "%" + " de los 251 Pokemon no provienen de huevos";
+  document.getElementById("twoKm").innerHTML += "Para encontrar al " + Math.round(twoKmsEggs)+"%"+" de los Pokemon que nacen de los huevos de 2 Km";
+  document.getElementById("fiveKm").innerHTML += "Para encontrar al" +Math.round(fiveKmsEggs)+"%"+" de los Pokemon que nacen de los huevos de 5 Km";
+  document.getElementById("sevenKm").innerHTML += "Para encontrar al " + Math.round(sevenKmsEggs)+"%"+" de los Pokemon que nacen de los huevos de 7Km";
+  document.getElementById("tenKm").innerHTML += "Para encontrar al " + Math.round(tenKmsEggs)+"%"+" de los Pokemon que nacen de los huevos de 10 Km";
+})
 
