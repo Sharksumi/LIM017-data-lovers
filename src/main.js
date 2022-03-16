@@ -128,18 +128,16 @@ pokemonSort.addEventListener("change", () => {
   if (descendent === "descendent") {
     const sortedPokemon = orderPokemonDescendent(arrayPokemon);
 
-    // for (let pokemon of sortedPokemon) {
-    //   showData.innerHTML += cardData(pokemon);
-    // }
-    showPokemonInfo(sortedPokemon);
+    for (let pokemon of sortedPokemon) {
+      showData.innerHTML += cardData(pokemon);
+    }
   }
 
   if (descendent === "ascendent") {
     const sortedPokemon = orderPokemonAscendent(arrayPokemon);
-    // for (let pokemon of sortedPokemon) {
-    //   showData.innerHTML += cardData(pokemon);
-    // }
-    showPokemonInfo(sortedPokemon);
+    for (let pokemon of sortedPokemon) {
+      showData.innerHTML += cardData(pokemon);
+    }
   }
 
   if (descendent === "numero") {
@@ -171,7 +169,7 @@ const showPokemonInfo = (pokemonList) => {
   for (let pokemon of pokemonList) {
     showData.innerHTML += cardData(pokemon);
   }
-//
+
   for (let pokemon of pokemonList) {
     cardDataAddEvent(pokemon);
   }
