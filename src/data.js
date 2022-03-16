@@ -60,7 +60,15 @@ export const filtergeneration = (pokemons, generation) => {
  return findPokemon;
 
 }
-  export const anotherExample = () => {
-    return "OMG";
-  };
-
+  export const filterByEggs = (pokemonList, egg) => {
+    let eggsOfPokemon =  pokemonList.filter((pokemon)=>{
+      if (pokemon.egg == egg){
+        ((eggsOfPokemon.length)/251)*100;
+         }
+         else{
+           false
+         }
+    
+     return Math.round(eggsOfPokemon);
+    })
+  }
