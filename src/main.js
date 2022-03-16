@@ -1,4 +1,9 @@
-import {filtergeneration, orderPokemons, orderPokemonAscendent, orderPokemonDescendent, buscar, groupEggs //agregado  como prueba de calculo
+import {
+  filtergeneration,
+  orderPokemons,
+  orderPokemonAscendent,
+  orderPokemonDescendent,
+  buscar
 } from "./data.js";
 
 import pokemonList from "./data/pokemon/pokemon.js"; //importamos los datos del array
@@ -7,65 +12,27 @@ const arrayPokemon = pokemonList.pokemon; // guardamos esos datos en un nuevo ar
 const showData = document.querySelector("#showData"); //obtenemos este id para
 showData.innerHTML = ""; //mostrar en la pag web, va vacío para limpiarlo cada vez que itere el ciclo
 //aplicar ciclo de for para iterar por los elementos del array
-
-//Agregado el ID unico para poder asignar el valor de cada pokemon por ID
 const cardData = (characteristics) => `
-<main class= "pkmCard" id="${characteristics.num}">
+<main class= "pkmCard" id="pkmCard">
   <div class="jsNum">${characteristics.num}</div>
-  <div class="jsName">${characteristics.name.charAt(0).toUpperCase() + characteristics.name.slice(1)}</div>
+  <div class="jsName">${characteristics.name.charAt(0).toUpperCase() + characteristics.name.slice(1)
+  }</div>
   <div class="jsImg"><img src="${characteristics.img}"></div>
   <div class="jsGen">${characteristics.generation.num.toUpperCase()}</div>
   <div class= "jsGenNum">${characteristics.generation.name.charAt(0).toUpperCase() +
-  characteristics.generation.name.slice(1)}</div>
+  characteristics.generation.name.slice(1)
+  }</div>
 </main>
 `;
-//agregar una funcion de event listener a la primera carga de la data
-const cardDataAddEvent = (characteristics) =>{
-let card = document.getElementById(characteristics.num);
-console.log(card);
-card.addEventListener('click', () => showPokemonDetails(characteristics))
-
-}
-//plantilla nueva de pokemon unico 
-const pokemonDetails = (pokemonData) =>
-` <div id="description">
-    <section id="pokemonDetails">
-      <div class="">${pokemonData.num}</div>
-      <div class="">${pokemonData.name}</div>
-      <div class=""><img src="${pokemonData.img}"></div>
-      <div class="">${pokemonData.type}</div>
-      <div class="">${pokemonData.about}</div>
-      <div class="">${pokemonData.egg}</div>
-      <div class="">${pokemonData.stats["max-hp"]}</div>
-    </section>
-  </div>
-`
-// para mostrar la nueva plantilla
-const showPokemonDetails = (pokemonData) => {
-  showData.innerHTML=""
-  showData.innerHTML += pokemonDetails(pokemonData)
-}
-
-
 for (let characteristics of arrayPokemon) {
   //console.log(characteristics.num);
   showData.innerHTML += cardData(characteristics);
-  
 }
-// for (let seePokemonData of arrayPokemon){
-//    pokemonDetails.innerHTML += cardData(seePokemonData); 
-// }
-
-// agregado solo la instruccion para el listener
-for (let pokemon of arrayPokemon) {
-  cardDataAddEvent(pokemon);
-}
-
 
 document.getElementById("bienvenida").classList.remove("hide");
 // Funcion para ocultar la tabla de pokemon en la bienvenida
-  let btnSee = document.getElementById("btnMain");
-  btnSee.addEventListener("click", showTable);
+let btnSee = document.getElementById("btnMain");
+btnSee.addEventListener("click", showTable);
 
 
 function showTable() {
@@ -101,11 +68,11 @@ bt2.addEventListener("click", function () {
 });
 //console.log(g2);
 const ascendentP = document.getElementById("ascendent");
-  ascendentP.addEventListener("change", () => {
+ascendentP.addEventListener("change", () => {
   // console.log("Ascendent Called");
-    showData.innerHTML = "";
-    document.getElementById("dataPokemon").classList.remove("hide");
-    document.getElementById("bienvenida").classList.add("hide");
+  showData.innerHTML = "";
+  document.getElementById("dataPokemon").classList.remove("hide");
+  document.getElementById("bienvenida").classList.add("hide");
   const orderUp = orderPokemons(arrayPokemon, "name");
   // console.log(orderUp);
   for (let aZorder of orderUp) {
@@ -141,16 +108,11 @@ pokemonSort.addEventListener("change", () => {
   }
 
   if (descendent === "numero") {
-    showPokemonInfo(arrayPokemon);
+    for (let pokemon of arrayPokemon) {
+      showData.innerHTML += cardData(pokemon);
+    }
   }
-//opción  para calcular los pokemon por max hp (el mayor va primero)
-  // if (descendent === "hp") {
-  //   const sortedPokemon = sortByHp(arrayPokemon);
-  //   showPokemonInfo(sortedPokemon);
-  // }
-  //console.log("showPokemonInfo");
 });
-
 
 let buscaPokemon = document.getElementById("buscador")
 buscaPokemon.addEventListener("click", () => {
@@ -161,47 +123,5 @@ buscaPokemon.addEventListener("click", () => {
   document.getElementById("bienvenida").classList.add("hide");
   const searchingPokemon = buscar(arrayPokemon, inputBuscador);
   showData.innerHTML += cardData(searchingPokemon);
-})
-
-// nueva funcion para mostrar  la data de todos los pokemon de la lista 
-// agrega el event listener a cada carga nueva 
-const showPokemonInfo = (pokemonList) => {
-  for (let pokemon of pokemonList) {
-    showData.innerHTML += cardData(pokemon);
-  }
-
-  for (let pokemon of pokemonList) {
-    cardDataAddEvent(pokemon);
-  }
-}
-// para saber el numero exacto de objetos por tipo de huevos
-// let eggs = groupEggs(arrayPokemon)
-// el length el la cantidad de objetos en cada grupo determinado de huevos
-//console.log(eggs.tenKmsEggArray.length + "/251");
-
-//cantidad exacta en enteros de huevos por kilometraje
-// const noEggs = ((eggs.notAnEggArray.length)/251)*100     //153;
-// const twoKmsEggs = ((eggs.twoKmsEggArray.length)/251)*100 //23;
-// const fiveKmsEggs = ((eggs.fiveKmsEggArray.length)/251)*100//53;
-// const sevenKmsEggs = ((eggs.sevenKmsEggArray.length)/251)*100//8;
-// const tenKmsEggs = ((eggs.tenKmsEggArray.length)/251)*100//14;
-
-//calculo del porcentaje de cada huevo con respecto al total
-//const proportionalEggs = (noEggs/251)*100;
-
-
-
-
-
-//agregar el boton para mostrar los huevos y mostrarlos en cada sección por tipo de huevo
-const btnEggs = document.getElementById("btnEggs")
-btnEggs.addEventListener("click",()=> {
-  document.getElementById("conteoDeHuevos").classList.remove("hide");
-  document.getElementById("bienvenida").classList.add("hide");
-  document.getElementById("noHuevo").innerHTML += "El " + groupEggs + "%" + " de los 251 Pokemon no provienen de huevos";
-  // document.getElementById("twoKm").innerHTML += "Para encontrar al " + Math.round(twoKmsEggs)+"%"+" de los Pokemon que nacen de los huevos de 2 Km";
-  // document.getElementById("fiveKm").innerHTML += "Para encontrar al " +Math.round(fiveKmsEggs)+"%"+" de los Pokemon que nacen de los huevos de 5 Km";
-  // document.getElementById("sevenKm").innerHTML += "Para encontrar al " + Math.round(sevenKmsEggs)+"%"+" de los Pokemon que nacen de los huevos de 7Km";
-  // document.getElementById("tenKm").innerHTML += "Para encontrar al " + Math.round(tenKmsEggs)+"%"+" de los Pokemon que nacen de los huevos de 10 Km";
 })
 

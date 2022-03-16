@@ -12,7 +12,7 @@ body {
    background-repeat:no-repeat;
   }
 
-button#buscador {
+  button#buscador {
     width: 41.07px;
     /* height: 35.64px; */
     left: 468.53px;
@@ -55,7 +55,6 @@ nav{
 main .bodydata :hover {
   background-color: red;
   color: rgb(252, 249, 249);
-  border-radius: 10px;
 }
 
 #btnMain {
@@ -75,6 +74,9 @@ main .bodydata :hover {
 #btnMain:hover {
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
       0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  }
+  .imgSearch{
+    width: 29px;
   }
 
 #kanto {
@@ -104,8 +106,6 @@ main .bodydata :hover {
 #johto img{
 border-radius: 25px 0px 0px 25px;
 }
-
-
 #searchPoke{
   display: flex;
   align-items: flex-end;
@@ -135,14 +135,11 @@ border-radius: 25px 0px 0px 25px;
     font-size: 20px;
 }
 
+
+
 #showData{
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.4);
-  margin: 10px;
-  color: #fff;
-  border-radius: 8px;
 }
 
 #pokeWhite{
@@ -155,8 +152,6 @@ display: flex;
     margin-left: 60px;
     flex-wrap: wrap;
     justify-content: space-around;
-    align-items: center;
- 
 }
 
 #video{
@@ -169,76 +164,24 @@ display: flex;
   background-image: url(/imagenes/fondo-pokemon-3.png);
 }
 
-.cardEggs{
-  display: flex;
-  margin-left: 60px;
-  flex-wrap: wrap;
-  width: 80%;
-}
-
 .chart {
   margin: 150px auto;
   width: 800px;
   text-align: center;
 }
 
-
 .hide {
   display: none;
 }
-.imgSearch{
-  width: 29px;
+
+.pkmnPrueba{
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  margin: 10px;
+  color: #fff;
+  border-radius: 8px;
 }
 
-
-  #noHuevo{
-    width: -webkit-fill-available;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.4);
-    margin: 10px;
-    color: #fff;
-    border-radius: 8px;
+@media screen {
   }
 
-  #twoKm{ 
-    width: -webkit-fill-available;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.4);
-    margin: 10px;
-    color: #fff;
-    border-radius: 8px;
-
-  }
-  #fiveKm{ 
-    width: -webkit-fill-available;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.4);
-    margin: 10px;
-    color: #fff;
-    border-radius: 8px;
-
-  }
-  #sevenKm{
-    width: -webkit-fill-available;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.4);
-    margin: 10px;
-    color: #fff;
-    border-radius: 8px;
-
-  }
-  #tenKm{
-    width: -webkit-fill-available;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.4);
-    margin: 10px;
-    color: #fff;
-    border-radius: 8px;
-  }
-
-  #eggBox{
-    top:-15px;
-  }
-  #text{
-    background-color: red;
-  }
