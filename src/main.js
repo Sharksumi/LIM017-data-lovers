@@ -16,10 +16,10 @@ showData.innerHTML = ""; //mostrar en la pag web, va vacío para limpiarlo cada 
 const cardData = (characteristics) => `
 <section class= "pkmCard" id="pkmCard">
   <div class="jsNum">${characteristics.num}</div>
-  <div class="jsName">${characteristics.name.charAt(0).toUpperCase() + characteristics.name.slice(1)  }</div>
+  <div class="jsName">${characteristics.name.charAt(0).toUpperCase() + characteristics.name.slice(1)}</div>
   <div class="jsImg"><img src="${characteristics.img}"></div>
   <div class="jsGen">${characteristics.generation.num.toUpperCase()}</div>
-  <div class= "jsGenNum">${characteristics.generation.name.charAt(0).toUpperCase() +  characteristics.generation.name.slice(1)
+  <div class= "jsGenNum">${characteristics.generation.name.charAt(0).toUpperCase() + characteristics.generation.name.slice(1)
   }</div>
 </section>
 `;
@@ -46,7 +46,7 @@ bt1.addEventListener("click", function () {
   document.getElementById("bienvenida").classList.add("hide");
 
   const g1 = filtergeneration(arrayPokemon, "generation i");
-  
+
   for (let poke of g1) {
     showData.innerHTML += cardData(poke);
   }
@@ -131,7 +131,7 @@ showData2.innerHTML = ""
 const cardData2 = (pokemonData) => `
 <section class= "pkmCard2" id=${pokemonData.num}>
   <div class="jsNum">${pokemonData.num}</div>
-  <div class="jsName">${pokemonData.name.charAt(0).toUpperCase() + pokemonData.name.slice(1)  }</div>
+  <div class="jsName">${pokemonData.name.charAt(0).toUpperCase() + pokemonData.name.slice(1)}</div>
   <div class="jsImg"><img src="${pokemonData.img}"></div>
   <div class= "jstype">${pokemonData.type}</div>
   <div class="statAttack>${pokemonData.stats["base-attack"]}+" Ataque base" </div>
@@ -140,37 +140,60 @@ const cardData2 = (pokemonData) => `
 
 </section>
 `;
-for (let pokemonData of arrayPokemon) {
-  //console.log(characteristics.num);
-  showData2.innerHTML += cardData2(pokemonData);
-}
-document.getElementById("bienvenida").classList.remove("hide");
-// Funcion para ocultar la tabla de pokemon en la bienvenida
-let card2 = document.getElementById("pkmCard");
-card2.addEventListener("click", showTable2);
+// for (let pokemonData of arrayPokemon) {
+//   //console.log(characteristics.num);
+//   showData2.innerHTML += cardData2(pokemonData);
+// }
+const closeCard = document.querySelectorAll(".close")[0];
+const openCard = document.querySelectorAll(".showCard")[0]; // este debe ser reemplazado por el class de la tarjeta en el array de plantilla 1
+const modal = document.querySelectorAll(".modal")[0];
+const modalContainer = document.querySelectorAll(".modalContainer")[0];
 
-function showTable2() {
-  document.getElementById("showData2").classList.remove("hide");
-  document.getElementById("showData").classList.add("hide");
-}
+openCard.addEventListener("click", function (e) {
+  e.preventDefault();
+  modalContainer.style.opacity = "1";
+  modalContainer.style.visibility = "visible";
+  modal.classList.toggle("modal-close");
+});
+closeCard.addEventListener("click", function () {
+  modal.classList.toggle("modal-close");
+
+  setTimeout(function () {
+    modalContainer.style.opacity = "0";
+    modalContainer.style.visibility = "hidden";
+  }, 900)
+});
+
+window.addEventListener("click", function (e) {
+  console.log(e.target);
+  if (e.target == modalContainer) {
+    modal.classList.toggle("modal-close");
+
+    setTimeout(function () {
+      modalContainer.style.opacity = "0";
+      modalContainer.style.visibility = "hidden";
+    }, 900)
+  }
+});
 
 
 
-//declaramos variable para que aparezca la plantilla 2
-const showData3= document.querySelector("#showData3"); //obtenemos este id para
-showData3.innerHTML = ""
+
+//declaramos variable para que aparezca la info de los huevos
+// const showData3= document.querySelector("#showData3"); //obtenemos este id para
+// showData3.innerHTML = ""
 
 
-const callEggs =document.getElementById("calculatedEggs");
-callEggs.addEventListener("click",() => { 
-  showData3.innerHTML=""
-  document.getElementById("dataPokemon").classList.remove("hide");
-  document.getElementById("bienvenida").classList.add("hide");
+// const callEggs =document.getElementById("calculatedEggs");
+// callEggs.addEventListener("click",() => {
+//   showData3.innerHTML=""
+//   document.getElementById("dataPokemon").classList.remove("hide");
+//   document.getElementById("bienvenida").classList.add("hide");
 
 
- const notInEggs = filterByEggs(arrayPokemon, "not in eggs");
- for( let egg0 of notInEggs){
-  showData3.innerHTML += cardData(egg0)
- }
+//  const notInEggs = filterByEggs(arrayPokemon, "not in eggs");
+//  for( let egg0 of notInEggs){
+//   showData3.innerHTML += cardData(egg0)
+//  }
 
-})
+// })
