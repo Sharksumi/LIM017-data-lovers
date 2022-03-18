@@ -4,6 +4,7 @@ import {
   orderPokemonAscendent,
   orderPokemonDescendent,
   buscar,
+  findImg,
   filterByEggs
 } from "./data.js";
 
@@ -14,10 +15,11 @@ const showData = document.querySelector("#showData"); //obtenemos este id para
 showData.innerHTML = ""; //mostrar en la pag web, va vacío para limpiarlo cada vez que itere el ciclo
 //aplicar ciclo de for para iterar por los elementos del array
 const cardData = (characteristics) => `
-<section class= "pkmCard" id="pkmCard">
+<section class= "showCard0" id="pkmCard">
   <div class="jsNum">${characteristics.num}</div>
   <div class="jsName">${characteristics.name.charAt(0).toUpperCase() + characteristics.name.slice(1)}</div>
-  <div class="jsImg"><img src="${characteristics.img}"></div>
+  <div><img class="jsImg" src="${characteristics.img}"></div>
+  
   <div class="jsGen">${characteristics.generation.num.toUpperCase()}</div>
   <div class= "jsGenNum">${characteristics.generation.name.charAt(0).toUpperCase() + characteristics.generation.name.slice(1)
   }</div>
@@ -132,7 +134,7 @@ const cardData2 = (pokemonData) => `
 <section class= "pkmCard2" id=${pokemonData.num}>
   <div class="jsNum">${pokemonData.num}</div>
   <div class="jsName">${pokemonData.name.charAt(0).toUpperCase() + pokemonData.name.slice(1)}</div>
-  <div class="jsImg"><img src="${pokemonData.img}"></div>
+  <div ><img class="jsImg" src="${pokemonData.img}"></div>
   <div class= "jstype">${pokemonData.type}</div>
   <div class="statAttack>${pokemonData.stats["base-attack"]}+" Ataque base" </div>
   <div class="jsAbout">${pokemonData.about}</div>
@@ -140,21 +142,26 @@ const cardData2 = (pokemonData) => `
 
 </section>
 `;
-// for (let pokemonData of arrayPokemon) {
-//   //console.log(characteristics.num);
-//   showData2.innerHTML += cardData2(pokemonData);
-// }
+for( let pokemon of arrayPokemon){
+  showData2.innerHTML = "";
+  showData2.innerHTML += cardData2 (pokemon)
+}
+//este ciclo solo me muestra el ultimo cuando da clic en <a>
+
 const closeCard = document.querySelectorAll(".close")[0];
 const openCard = document.querySelectorAll(".showCard")[0]; // este debe ser reemplazado por el class de la tarjeta en el array de plantilla 1
 const modal = document.querySelectorAll(".modal")[0];
 const modalContainer = document.querySelectorAll(".modalContainer")[0];
 
+//  function showMoreInformation  (){   
 openCard.addEventListener("click", function (e) {
   e.preventDefault();
   modalContainer.style.opacity = "1";
   modalContainer.style.visibility = "visible";
   modal.classList.toggle("modal-close");
 });
+  
+
 closeCard.addEventListener("click", function () {
   modal.classList.toggle("modal-close");
 
@@ -165,7 +172,7 @@ closeCard.addEventListener("click", function () {
 });
 
 window.addEventListener("click", function (e) {
-  console.log(e.target);
+  // console.log(e.target);
   if (e.target == modalContainer) {
     modal.classList.toggle("modal-close");
 
@@ -175,7 +182,7 @@ window.addEventListener("click", function (e) {
     }, 900)
   }
 });
-
+// }
 
 
 

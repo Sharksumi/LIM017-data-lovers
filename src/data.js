@@ -58,8 +58,13 @@ export const filtergeneration = (pokemons, generation) => {
  export const buscar = (pokemonList,name)=> {
  const findPokemon = pokemonList.find(element => element.name.toLowerCase() === name.toLowerCase());
  return findPokemon;
-
 }
+// Función buscar por img
+export const findImg = (pokemonList,img) =>{ 
+  const imgPoke = pokemonList.find((pokemon)=>{pokemon.img==img}) 
+return imgPoke;
+}
+
   export const filterByEggs = (pokemonList, egg) => {
     let eggsOfPokemon =  pokemonList.filter((pokemon)=>{
       if (pokemon.egg == egg){

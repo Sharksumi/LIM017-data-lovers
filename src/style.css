@@ -214,9 +214,7 @@ display: flex;
     color: #fff;
     font-size: 20px;
 }
-.containertexts{
-  background-color: aliceblue;
-}
+
 .modalContainer{
   opacity: 0;
   visibility: hidden;
@@ -262,6 +260,9 @@ display: flex;
   line-height: 25px;
   cursor: pointer;
   border-radius: 5px;
+}
+.showCard{
+  color: aliceblue;
 }
 @media screen and (max-width:600px){
   section{
