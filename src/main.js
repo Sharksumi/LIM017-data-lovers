@@ -4,7 +4,6 @@ import {
   orderPokemonAscendent,
   orderPokemonDescendent,
   buscar,
-  findImg,
   filterByEggs
 } from "./data.js";
 
@@ -15,11 +14,11 @@ const showData = document.querySelector("#showData"); //obtenemos este id para
 showData.innerHTML = ""; //mostrar en la pag web, va vacío para limpiarlo cada vez que itere el ciclo
 //aplicar ciclo de for para iterar por los elementos del array
 const cardData = (characteristics) => `
-<section class= "showCard0" id="pkmCard">
+<section class= "showCard0" id="${characteristics.num}" >
   <div class="jsNum">${characteristics.num}</div>
   <div class="jsName">${characteristics.name.charAt(0).toUpperCase() + characteristics.name.slice(1)}</div>
   <div><img class="jsImg" src="${characteristics.img}"></div>
-  
+  <a href="#"class="showCard" >"Más información"</a>
   <div class="jsGen">${characteristics.generation.num.toUpperCase()}</div>
   <div class= "jsGenNum">${characteristics.generation.name.charAt(0).toUpperCase() + characteristics.generation.name.slice(1)
   }</div>
@@ -28,7 +27,14 @@ const cardData = (characteristics) => `
 for (let characteristics of arrayPokemon) {
   //console.log(characteristics.num);
   showData.innerHTML += cardData(characteristics);
+  // const card2= document.querySelectorAll(".showCard0");
+// for( let pokemon of card2){
+//   pokemon.addEventListener("click",(e)=>{
+//     console.log(e.target.id);
+//   })
 }
+
+// }
 
 document.getElementById("bienvenida").classList.remove("hide");
 // Funcion para ocultar la tabla de pokemon en la bienvenida
@@ -124,6 +130,45 @@ buscaPokemon.addEventListener("click", () => {
   document.getElementById("bienvenida").classList.add("hide");
   const searchingPokemon = buscar(arrayPokemon, inputBuscador);
   showData.innerHTML += cardData(searchingPokemon);
+
+  const closeCard = document.querySelectorAll(".close")[0];
+  const openCard = document.querySelectorAll(".showCard")[0]; 
+  
+  // este debe ser reemplazado por el class de la tarjeta en el array de plantilla 1
+  const modal = document.querySelectorAll(".modal")[0];
+  const modalContainer = document.querySelectorAll(".modalContainer")[0];
+  
+
+
+  openCard.addEventListener("click", function (e) {
+    
+    e.preventDefault();
+    modalContainer.style.opacity = "1";
+    modalContainer.style.visibility = "visible";
+    modal.classList.toggle("modal-close");
+  });
+    
+  
+  closeCard.addEventListener("click", function () {
+    modal.classList.toggle("modal-close");
+  
+    setTimeout(function () {
+      modalContainer.style.opacity = "0";
+      modalContainer.style.visibility = "hidden";
+    }, 900)
+  });
+  
+  window.addEventListener("click", function (e) {
+    // console.log(e.target);
+    if (e.target == modalContainer) {
+      modal.classList.toggle("modal-close");
+  
+      setTimeout(function () {
+        modalContainer.style.opacity = "0";
+        modalContainer.style.visibility = "hidden";
+      }, 900)
+    }
+  });
 })
 
 //declaramos variable para que aparezca la plantilla 2
@@ -142,46 +187,15 @@ const cardData2 = (pokemonData) => `
 
 </section>
 `;
-for( let pokemon of arrayPokemon){
-  showData2.innerHTML = "";
-  showData2.innerHTML += cardData2 (pokemon)
-}
-//este ciclo solo me muestra el ultimo cuando da clic en <a>
+ 
+ 
+//este ciclo solo me muestra el ultimo cuando da clic en <a>, creo que es porque
+// no le puse pokemonData. Pero si pongo pokemondata salen los 251.
 
-const closeCard = document.querySelectorAll(".close")[0];
-const openCard = document.querySelectorAll(".showCard")[0]; // este debe ser reemplazado por el class de la tarjeta en el array de plantilla 1
-const modal = document.querySelectorAll(".modal")[0];
-const modalContainer = document.querySelectorAll(".modalContainer")[0];
+
 
 //  function showMoreInformation  (){   
-openCard.addEventListener("click", function (e) {
-  e.preventDefault();
-  modalContainer.style.opacity = "1";
-  modalContainer.style.visibility = "visible";
-  modal.classList.toggle("modal-close");
-});
-  
 
-closeCard.addEventListener("click", function () {
-  modal.classList.toggle("modal-close");
-
-  setTimeout(function () {
-    modalContainer.style.opacity = "0";
-    modalContainer.style.visibility = "hidden";
-  }, 900)
-});
-
-window.addEventListener("click", function (e) {
-  // console.log(e.target);
-  if (e.target == modalContainer) {
-    modal.classList.toggle("modal-close");
-
-    setTimeout(function () {
-      modalContainer.style.opacity = "0";
-      modalContainer.style.visibility = "hidden";
-    }, 900)
-  }
-});
 // }
 
 

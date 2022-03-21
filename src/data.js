@@ -1,3 +1,5 @@
+import pokemon from "./data/pokemon/pokemon";
+
 export const filtergeneration = (pokemons, generation) => {
     //filter es usado con una funcion que sería el callback
     //en el parametro se pone la info que queremos obtener
@@ -59,12 +61,13 @@ export const filtergeneration = (pokemons, generation) => {
  const findPokemon = pokemonList.find(element => element.name.toLowerCase() === name.toLowerCase());
  return findPokemon;
 }
-// Función buscar por img
-export const findImg = (pokemonList,img) =>{ 
-  const imgPoke = pokemonList.find((pokemon)=>{pokemon.img==img}) 
-return imgPoke;
-}
-
+// export const searchForID= (pokemonList,num)=>{
+//   const numPokemon = pokemonList.filter((pokemon)=>{if(pokemon.num==num)
+//     {    return true}
+//     else{ return false     }
+//   })
+// return numPokemon
+// };
   export const filterByEggs = (pokemonList, egg) => {
     let eggsOfPokemon =  pokemonList.filter((pokemon)=>{
       if (pokemon.egg == egg){
@@ -77,3 +80,4 @@ return imgPoke;
      return Math.round(eggsOfPokemon);
     })
   }
+  
