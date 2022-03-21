@@ -1,4 +1,3 @@
-import pokemon from "./data/pokemon/pokemon";
 
 export const filtergeneration = (pokemons, generation) => {
     //filter es usado con una funcion que sería el callback
@@ -61,12 +60,18 @@ export const filtergeneration = (pokemons, generation) => {
  const findPokemon = pokemonList.find(element => element.name.toLowerCase() === name.toLowerCase());
  return findPokemon;
 }
-// export const searchForID= (pokemonList,num)=>{
-//   const numPokemon = pokemonList.filter((pokemon)=>{if(pokemon.num==num)
-//     {    return true}
-//     else{ return false     }
-//   })
-// return numPokemon
+
+export const searchForID = (pokemonList, num)=>{
+  const numPokemon = pokemonList.find(element=> element.num===num);
+  return numPokemon;
+}
+//  export const searchForID= (pokemonList,num)=>{
+//   const numPokemon = pokemonList.filter((pokemon)=>{
+//     if(pokemon.num==num)
+//      {return true}
+//     else{ return false }
+//    })
+//  return numPokemon;
 // };
   export const filterByEggs = (pokemonList, egg) => {
     let eggsOfPokemon =  pokemonList.filter((pokemon)=>{
