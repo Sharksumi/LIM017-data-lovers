@@ -146,7 +146,12 @@ buscaPokemon.addEventListener("click", () => {
     modalContainer.style.visibility = "visible";
     modal.classList.toggle("modal-close");
 
+// Nay - 22/03/22
+    let pokemonData =searchForID(arrayPokemon, e.target.id);
+    console.log(pokemonData);
 
+    showData2.innerHTML = cardData2(pokemonData);
+// - aqui termina-     
   });
   const showData2 = document.querySelector("#showData2");
   showData2.innerHTML="";
