@@ -66,13 +66,8 @@ export const searchForID = (pokemonList, num)=>{
   return numPokemon;
 }
 
-  export const filterByEggs = (pokemonList, egg) => {
-    let eggsOfPokemon =  pokemonList.filter((pokemon)=>{
-      if (pokemon.egg == egg){
-        ((eggsOfPokemon.length)/251)*100;
-         }
-    
-      })
-      return Math.round(eggsOfPokemon);
-  }
-  
+export const groupEggs =(pokemonList, egg)=>{
+  let findEggs =  pokemonList.filter(pokemon => pokemon.egg === egg).length;
+  let percentage =(findEggs/251)*100
+  return percentage;
+}

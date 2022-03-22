@@ -5,7 +5,8 @@ import {
   orderPokemonDescendent,
   buscar,
   searchForID,
-  filterByEggs
+  groupEggs, 
+
 } from "./data.js";
 
 import pokemonList from "./data/pokemon/pokemon.js"; //importamos los datos del array
@@ -134,7 +135,7 @@ buscaPokemon.addEventListener("click", () => {
   
   
   openCard.addEventListener("click", function (e) {
-    console.log(  e.target.id)
+    // console.log(  e.target.id)
     e.preventDefault();
     modalContainer.style.opacity = "1";
     modalContainer.style.visibility = "visible";
@@ -142,7 +143,7 @@ buscaPokemon.addEventListener("click", () => {
 
 // Nay - 22/03/22
     let pokemonData =searchForID(arrayPokemon, e.target.id);
-    console.log(pokemonData);
+    // console.log(pokemonData);
 
     showData2.innerHTML = cardData2(pokemonData);
 // - aqui termina-     
@@ -190,17 +191,23 @@ buscaPokemon.addEventListener("click", () => {
 
 
 //declaramos variable para que aparezca la info de los huevos
-const showData3= document.querySelector("#showData3"); //obtenemos este id para
-showData3.innerHTML = ""
-
 
 const callEggs =document.getElementById("calculatedEggs");
 callEggs.addEventListener("click",() => {
-  showData3.innerHTML=""
-  document.getElementById("dataPokemon").classList.remove("hide");
+  document.querySelector(".eggSection").classList.remove("hide");
   document.getElementById("bienvenida").classList.add("hide");
 
 
- const notInEggs = filterByEggs(arrayPokemon, "not in eggs");
-showData3.innerHTML+=notInEggs;
+  const noEggs = groupEggs(arrayPokemon, "not in eggs");//153
+  console.log(noEggs)
+  const twoKmsEggs = groupEggs(arrayPokemon, "2 km");//23
+  const fiveKmsEggs = groupEggs(arrayPokemon, "2 km");//53
+  const sevenKmsEggs = groupEggs(arrayPokemon, "2 km");//8
+  const tenKmsEggs = groupEggs(arrayPokemon, "2 km");//14
+
+  document.getElementById("noEgg").innerHTML += "El " + Math.round(noEggs)+ "%" + " de los 251 Pokemon no provienen de huevos";
+  document.getElementById("twoKm").innerHTML += "Para encontrar al " + Math.round(twoKmsEggs)+"%"+" de los Pokemon que nacen de los huevos de 2 Km";
+  document.getElementById("fiveKm").innerHTML += "Para encontrar al" +Math.round(fiveKmsEggs)+"%"+" de los Pokemon que nacen de los huevos de 5 Km";
+  document.getElementById("sevenKm").innerHTML += "Para encontrar al " + Math.round(sevenKmsEggs)+"%"+" de los Pokemon que nacen de los huevos de 7Km";
+  document.getElementById("tenKm").innerHTML += "Para encontrar al " + Math.round(tenKmsEggs)+"%"+" de los Pokemon que nacen de los huevos de 10 Km";
 })
