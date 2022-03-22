@@ -62,7 +62,7 @@ export const filtergeneration = (pokemons, generation) => {
 }
 
 export const searchForID = (pokemonList, num)=>{
-  const numPokemon = pokemonList.find(element=> element.num===num);
+  const numPokemon = pokemonList.find(element=> element.num === num);
   return numPokemon;
 }
 //  export const searchForID= (pokemonList,num)=>{
