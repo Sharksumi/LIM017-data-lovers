@@ -28,14 +28,8 @@ const cardData = (characteristics) => `
 for (let characteristics of arrayPokemon) {
   //console.log(characteristics.num);
   showData.innerHTML += cardData(characteristics);
-  // const card2= document.querySelectorAll(".showCard0");
-// for( let pokemon of card2){
-//   pokemon.addEventListener("click",(e)=>{
-//     console.log(e.target.id);
-//   })
-}
 
-// }
+}
 
 document.getElementById("bienvenida").classList.remove("hide");
 // Funcion para ocultar la tabla de pokemon en la bienvenida
@@ -157,7 +151,7 @@ buscaPokemon.addEventListener("click", () => {
   showData2.innerHTML="";
  
   const cardData2 = (pokemonData) => `
-  <section class= "pkmCard2" id=${pokemonData.num}>
+  <section class= "pkmCard2" id="pkmCard">
     <div class="jsNum">${pokemonData.num}</div>
     <div class="jsName">${pokemonData.name.charAt(0).toUpperCase() + pokemonData.name.slice(1)}</div>
     <div ><img class="jsImg" src="${pokemonData.img}"></div>
@@ -194,33 +188,19 @@ buscaPokemon.addEventListener("click", () => {
 });
 
 
- 
-//este ciclo solo me muestra el ultimo cuando da clic en <a>, creo que es porque
-// no le puse pokemonData. Pero si pongo pokemondata salen los 251.
-
-
-
-//  function showMoreInformation  (){   
-
-// }
-
-
 
 //declaramos variable para que aparezca la info de los huevos
-// const showData3= document.querySelector("#showData3"); //obtenemos este id para
-// showData3.innerHTML = ""
+const showData3= document.querySelector("#showData3"); //obtenemos este id para
+showData3.innerHTML = ""
 
 
-// const callEggs =document.getElementById("calculatedEggs");
-// callEggs.addEventListener("click",() => {
-//   showData3.innerHTML=""
-//   document.getElementById("dataPokemon").classList.remove("hide");
-//   document.getElementById("bienvenida").classList.add("hide");
+const callEggs =document.getElementById("calculatedEggs");
+callEggs.addEventListener("click",() => {
+  showData3.innerHTML=""
+  document.getElementById("dataPokemon").classList.remove("hide");
+  document.getElementById("bienvenida").classList.add("hide");
 
 
-//  const notInEggs = filterByEggs(arrayPokemon, "not in eggs");
-//  for( let egg0 of notInEggs){
-//   showData3.innerHTML += cardData(egg0)
-//  }
-
-// })
+ const notInEggs = filterByEggs(arrayPokemon, "not in eggs");
+showData3.innerHTML+=notInEggs;
+})

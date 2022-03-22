@@ -65,24 +65,14 @@ export const searchForID = (pokemonList, num)=>{
   const numPokemon = pokemonList.find(element=> element.num === num);
   return numPokemon;
 }
-//  export const searchForID= (pokemonList,num)=>{
-//   const numPokemon = pokemonList.filter((pokemon)=>{
-//     if(pokemon.num==num)
-//      {return true}
-//     else{ return false }
-//    })
-//  return numPokemon;
-// };
+
   export const filterByEggs = (pokemonList, egg) => {
     let eggsOfPokemon =  pokemonList.filter((pokemon)=>{
       if (pokemon.egg == egg){
         ((eggsOfPokemon.length)/251)*100;
          }
-         else{
-           false
-         }
     
-     return Math.round(eggsOfPokemon);
-    })
+      })
+      return Math.round(eggsOfPokemon);
   }
   
