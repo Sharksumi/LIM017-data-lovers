@@ -1,5 +1,5 @@
-import { it } from 'eslint/lib/rule-tester/rule-tester';
-import { filtergeneration, orderPokemonAscendent, orderPokemonDescendent } from '../src/data.js';
+import { describe, it } from 'eslint/lib/rule-tester/rule-tester';
+import { filtergeneration, orderPokemonAscendent, orderPokemonDescendent, groupEggs } from '../src/data.js';
  const pokemonList =
  [{
   "num": "001",
@@ -343,3 +343,18 @@ describe('order-pokemon-ascendet', () => {
   });
 
  });
+
+ describe('Calculo de porcentaje por kilometros',()=>{ 
+  it("Porcentaje de Huevos que no vienen de un huevo", () => {
+    let arrayPokemon = [ 
+      {"egg": "not in an egg"}, 
+      {"egg": "2km"}, 
+      {"egg": "5km"}
+    ]
+    
+    let pokemonNotInAnEgg = groupEggs(arrayPokemon, "not in an egg")	
+     let resultEgg = (1/3)*100
+    expect(pokemonNotInAnEgg).toEqual(resultEgg);
+  });
+   
+});
