@@ -3,13 +3,13 @@
 }
 
 body {
-   margin: 0%;
-   width: 100%;
-   background-image: url(/imagenes/1046496.png);
-   background-attachment: fixed;
-   background-position: center;
-   background-size: contain;
-   background-repeat:no-repeat;
+  margin: 0%;
+  width: 100%;
+  background-image: url(/imagenes/1046496.png);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: contain;
+  background-repeat:no-repeat;
   }
 
   button#buscador {
