@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <title>Data Lovers</title>
+  <link rel="shortcut icon" href="/imagenes/pokeball-favicon.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <nav>
+    <img id="pokeWhite" src="/imagenes/pokeball-blanco.png" />
+    <!-- Para insertar buscador -->
+    <button id="buscador">
+      <img class="imgSearch" src="/imagenes/lupa-buscar.png" />
+    </button>
+    <input type="search" id="searchPoke" />
+    <select id="pokemonSort">
+      <option value="" disabled selected>Ordenar por:</option>
+      <option id="ascendent" value="ascendent">Ascendente A-Z</option>
+      <option id="descendent" value="descendent">Descendente Z-A</option>
+      <option id="numero" value="numero">Por número</option>
+    </select>
+    <button id="calculatedEggs">Huevos</button>
+    <!-- <button id="home">Home</button> -->
+  </nav>
+
+  <div class="bienvenida hide" id="bienvenida">
+    <section id="video">
+      <video width="100%" loop="" autoplay="">
+        <source src="/imagenes/pokemon-in-the-wild.mp4" type="video/mp4">
+      </video>
+    </section>
+    <h1>Bienvenido a la pokedex</h1>
+    <section id="region" class="region">
+      <h3>Elige una región</h3>
+      <button id="kanto">
+        <img src="/imagenes/kanto-logo-boton.png" />
+
+      </button>
+      <button id="johto"><img src="/imagenes/mapa-johto-boton.png" /></button>
+    </section>
+
+    <button id="btnMain" class="btnMain">Ver toda la Pokedex</button>
+  </div>
+  <!-- para mostrar la data de los pokemon -->
+  <main class="pkmnMain hide" id="dataPokemon">
+    <div id="table">
+      <section>
+        <div class="containertexts">
+          <div class="bodydata" id="showData"></div>
+        </div>
+      </section>
+      <div class="modalContainer">
+        <div class="modal modal-close">
+          <p class="close">x</p>
+          <div class="modal-textos">
+            <div class="allDetails " id="showData2"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    
+  </main>
+  <section class="eggSection hide">
+    <div class="showEggs" id="showData3">
+      <img class="eggs-design" src="/imagenes/Huevo_no_GO.png">
+      <p id="noEgg" class="msj-eggs">
+
+      </p>
+      <img class="eggs-design" src="/imagenes/Huevo_2_GO.png">
+      <p id="twoKm" class="msj-eggs">
+
+      </p>
+      <img class="eggs-design" src="/imagenes/Huevo_5_GO.png">
+      <p id="fiveKm" class="msj-eggs">
+
+      </p>
+      <img class="eggs-design" src="/imagenes/Huevo_7_GO.png">
+      <p id="sevenKm" class="msj-eggs">
+
+      </p>
+      <img class="eggs-design" src="/imagenes/Huevo_10_GO.png">
+      <p id="tenKm" class="msj-eggs">
+
+      </p>
+    </div>
+  </section>
+  <!-- <div id="root"></div> -->
+  <script src="main.js" type="module"></script>
+  <footer>NEON</footer>
+</body>
+
+</html>
